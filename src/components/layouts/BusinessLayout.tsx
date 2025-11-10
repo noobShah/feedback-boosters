@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { LayoutDashboard, PlusCircle, Package, BarChart3, Building2, Bell, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { useAuth } from '@/hooks/useAuth';
 
 interface BusinessLayoutProps {
   children: ReactNode;
@@ -10,6 +11,7 @@ interface BusinessLayoutProps {
 
 const BusinessLayout = ({ children }: BusinessLayoutProps) => {
   const location = useLocation();
+  const { signOut } = useAuth();
 
   const navItems = [
     { path: '/business/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
@@ -54,7 +56,11 @@ const BusinessLayout = ({ children }: BusinessLayoutProps) => {
         </nav>
 
         <div className="p-4 border-t border-sidebar-border">
-          <Button variant="ghost" className="w-full justify-start text-primary-foreground hover:bg-sidebar-primary">
+          <Button 
+            variant="ghost" 
+            className="w-full justify-start text-primary-foreground hover:bg-sidebar-primary"
+            onClick={signOut}
+          >
             <LogOut className="w-5 h-5 mr-3" />
             Logout
           </Button>

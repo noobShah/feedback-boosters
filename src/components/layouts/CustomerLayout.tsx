@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { LayoutDashboard, ShoppingBag, MessageSquare, FileText, User, Bell, LogOut } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { useAuth } from '@/hooks/useAuth';
 
 interface CustomerLayoutProps {
   children: ReactNode;
@@ -10,6 +11,7 @@ interface CustomerLayoutProps {
 
 const CustomerLayout = ({ children }: CustomerLayoutProps) => {
   const location = useLocation();
+  const { signOut } = useAuth();
 
   const navItems = [
     { path: '/customer/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
@@ -54,7 +56,11 @@ const CustomerLayout = ({ children }: CustomerLayoutProps) => {
         </nav>
 
         <div className="p-4 border-t border-sidebar-border">
-          <Button variant="ghost" className="w-full justify-start text-primary-foreground hover:bg-sidebar-primary">
+          <Button 
+            variant="ghost" 
+            className="w-full justify-start text-primary-foreground hover:bg-sidebar-primary"
+            onClick={signOut}
+          >
             <LogOut className="w-5 h-5 mr-3" />
             Logout
           </Button>

@@ -1,20 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card } from '@/components/ui/card';
 import { ArrowLeft } from 'lucide-react';
+import { useAuth } from '@/hooks/useAuth';
+import { useToast } from '@/hooks/use-toast';
 
 const CustomerLogin = () => {
   const navigate = useNavigate();
+  const { signIn, user, userRole, loading } = useAuth();
+  const { toast } = useToast();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    if (!loading && user && userRole === 'customer') {
+      navigate('/customer/dashboard');
+    }
+  }, [user, userRole, loading, navigate]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Mock login - redirect to dashboard
-    navigate('/customer/dashboard');
+    setIsSubmitting(true);
+
+    const { error } = await signIn(email, password, 'customer');
+    
+    if (error) {
+      toast({
+        title: "Login Failed",
+        description: error.message || "Invalid email or password",
+        variant: "destructive",
+      });
+    }
+    
+    setIsSubmitting(false);
   };
 
   return (
@@ -56,8 +78,8 @@ const CustomerLogin = () => {
               />
             </div>
 
-            <Button type="submit" className="w-full">
-              Continue as Customer
+            <Button type="submit" className="w-full" disabled={isSubmitting}>
+              {isSubmitting ? 'Signing in...' : 'Continue as Customer'}
             </Button>
           </form>
 
