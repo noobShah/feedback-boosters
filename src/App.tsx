@@ -27,6 +27,10 @@ import AddProduct from "./pages/business/AddProduct";
 import AllProducts from "./pages/business/AllProducts";
 import ProductInsights from "./pages/business/ProductInsights";
 import BusinessProfile from "./pages/business/BusinessProfile";
+import ViewProductFeedback from "./pages/business/ViewProductFeedback";
+
+// Components
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +40,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <AuthProvider>
           <Routes>
             <Route path="/" element={<Index />} />
@@ -58,6 +63,7 @@ const App = () => (
           <Route path="/business/dashboard" element={<BusinessDashboard />} />
           <Route path="/business/add-product" element={<AddProduct />} />
           <Route path="/business/all-products" element={<AllProducts />} />
+          <Route path="/business/product-feedback/:productId" element={<ViewProductFeedback />} />
           <Route path="/business/product-insights" element={<ProductInsights />} />
           <Route path="/business/profile" element={<BusinessProfile />} />
           

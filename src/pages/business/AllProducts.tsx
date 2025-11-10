@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Star, MessageSquare, Eye } from 'lucide-react';
 import { mockProducts } from '@/data/mockData';
+import { Link } from 'react-router-dom';
 
 const AllProducts = () => {
   return (
@@ -44,10 +45,12 @@ const AllProducts = () => {
                     </p>
                   </div>
                 </div>
-                <Button variant="outline" size="sm" className="w-full">
-                  <Eye className="w-4 h-4 mr-2" />
-                  View Feedback
-                </Button>
+                <Link to={`/business/product-feedback/${product.id}`}>
+                  <Button variant="outline" size="sm" className="w-full">
+                    <Eye className="w-4 h-4 mr-2" />
+                    View Feedback
+                  </Button>
+                </Link>
               </div>
             </Card>
           ))}
