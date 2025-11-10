@@ -8,10 +8,15 @@ import { Card } from '@/components/ui/card';
 import { Slider } from '@/components/ui/slider';
 import { Upload } from 'lucide-react';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { mockProducts } from '@/data/mockData';
 
 const SubmitFeedback = () => {
+  const location = useLocation();
+  const incomingState = (location.state || {}) as { productId?: string };
+
   const [rating, setRating] = useState([5]);
+  const [selectedProduct, setSelectedProduct] = useState<string | undefined>(incomingState.productId);
 
   return (
     <CustomerLayout>
@@ -25,7 +30,7 @@ const SubmitFeedback = () => {
           <form className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="product">Select Product</Label>
-              <Select>
+              <Select value={selectedProduct} onValueChange={(val) => setSelectedProduct(val)}>
                 <SelectTrigger>
                   <SelectValue placeholder="Choose a product you've tried" />
                 </SelectTrigger>

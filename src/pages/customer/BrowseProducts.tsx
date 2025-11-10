@@ -41,7 +41,7 @@ const BrowseProducts = () => {
                       {product.feedbackCount} reviews
                     </p>
                   </div>
-                  <Link to="/customer/submit-feedback">
+                  <Link to="/customer/submit-feedback" state={{ productId: product.id }}>
                     <Button size="sm">Review Now</Button>
                   </Link>
                 </div>

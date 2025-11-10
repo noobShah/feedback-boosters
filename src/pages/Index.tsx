@@ -52,7 +52,9 @@ const Index = () => {
       <nav className="bg-card border-b border-border">
         <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-xl sm:text-2xl font-bold text-primary">Try N Sell</div>
+            <div>
+              <img src="/logo.png" alt="Try N Sell" className="h-8 sm:h-8" />
+            </div>
             <div className="flex gap-2 sm:gap-4 items-center">
               {user && userRole ? (
                 <>
@@ -97,7 +99,7 @@ const Index = () => {
               </Button>
             </Link>
             <Link to="/business-signup">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="border-white text-accent hover:bg-white/10">
                 Join as Business <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
@@ -219,7 +221,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Try N Sell. All rights reserved.</p>
+            <p>&copy; 2025 Try N Sell. All rights reserved.</p>
           </div>
         </div>
       </footer>
