@@ -99,60 +99,60 @@ const ViewProductFeedback = () => {
   return (
     <BusinessLayout>
       <div className="space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
-            <Link to="/business/all-products" className="inline-flex items-center text-muted-foreground hover:text-foreground mb-2">
+            <Link to="/business/all-products" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-2">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to All Products
             </Link>
-            <h2 className="text-3xl font-bold">{product.name}</h2>
-            <p className="text-muted-foreground">{product.description}</p>
+            <h2 className="text-2xl sm:text-3xl font-bold">{product.name}</h2>
+            <p className="text-sm sm:text-base text-muted-foreground">{product.description}</p>
           </div>
         </div>
 
         {/* Overview Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <Card className="p-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <Card className="p-4 sm:p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-muted-foreground">Average Rating</span>
-              <Star className="w-5 h-5 text-accent" />
+              <span className="text-xs sm:text-sm text-muted-foreground">Average Rating</span>
+              <Star className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
             </div>
-            <p className="text-3xl font-bold">{product.rating}</p>
+            <p className="text-2xl sm:text-3xl font-bold">{product.rating}</p>
             <p className="text-xs text-muted-foreground">{product.feedbackCount} reviews</p>
           </Card>
 
-          <Card className="p-6">
+          <Card className="p-4 sm:p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-muted-foreground">Positive Feedback</span>
-              <TrendingUp className="w-5 h-5 text-success" />
+              <span className="text-xs sm:text-sm text-muted-foreground">Positive Feedback</span>
+              <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-success" />
             </div>
-            <p className="text-3xl font-bold text-success">{sentimentStats.positive}%</p>
+            <p className="text-2xl sm:text-3xl font-bold text-success">{sentimentStats.positive}%</p>
             <p className="text-xs text-muted-foreground">Customers satisfied</p>
           </Card>
 
-          <Card className="p-6">
+          <Card className="p-4 sm:p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-muted-foreground">Total Reviews</span>
-              <MessageSquare className="w-5 h-5 text-info" />
+              <span className="text-xs sm:text-sm text-muted-foreground">Total Reviews</span>
+              <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-info" />
             </div>
-            <p className="text-3xl font-bold">{product.feedbackCount}</p>
+            <p className="text-2xl sm:text-3xl font-bold">{product.feedbackCount}</p>
             <p className="text-xs text-muted-foreground">All time</p>
           </Card>
 
-          <Card className="p-6">
+          <Card className="p-4 sm:p-6">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-muted-foreground">Price</span>
-              <span className="text-sm font-semibold text-primary">{product.category}</span>
+              <span className="text-xs sm:text-sm text-muted-foreground">Price</span>
+              <span className="text-xs sm:text-sm font-semibold text-primary">{product.category}</span>
             </div>
-            <p className="text-3xl font-bold text-primary">₹{product.price.toLocaleString('en-IN')}</p>
+            <p className="text-2xl sm:text-3xl font-bold text-primary">₹{product.price.toLocaleString('en-IN')}</p>
             <p className="text-xs text-muted-foreground">Current price</p>
           </Card>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Rating Distribution */}
-          <Card className="p-6 lg:col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Rating Distribution</h3>
+          <Card className="p-4 sm:p-6 lg:col-span-1">
+            <h3 className="text-base sm:text-lg font-semibold mb-4">Rating Distribution</h3>
             <div className="space-y-3">
               {ratingDistribution.map((item) => (
                 <div key={item.stars} className="flex items-center gap-3">
@@ -197,27 +197,27 @@ const ViewProductFeedback = () => {
           </Card>
 
           {/* Customer Feedback */}
-          <Card className="p-6 lg:col-span-2">
-            <h3 className="text-lg font-semibold mb-4">Customer Feedback</h3>
-            <div className="space-y-4 max-h-[600px] overflow-y-auto pr-2">
+          <Card className="p-4 sm:p-6 lg:col-span-2">
+            <h3 className="text-base sm:text-lg font-semibold mb-4">Customer Feedback</h3>
+            <div className="space-y-4 max-h-[500px] sm:max-h-[600px] overflow-y-auto pr-2">
               {feedbackData.map((feedback) => (
-                <Card key={feedback.id} className="p-4 hover:shadow-md transition-shadow">
-                  <div className="flex items-start justify-between mb-3">
-                    <div>
-                      <div className="flex items-center gap-2 mb-1">
-                        <p className="font-semibold">{feedback.customerName}</p>
+                <Card key={feedback.id} className="p-3 sm:p-4 hover:shadow-md transition-shadow">
+                  <div className="flex flex-col sm:flex-row items-start justify-between mb-3 gap-2">
+                    <div className="w-full sm:w-auto">
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <p className="font-semibold text-sm sm:text-base">{feedback.customerName}</p>
                         {feedback.verified && (
                           <Badge variant="outline" className="text-xs">
-                            Verified Purchase
+                            Verified
                           </Badge>
                         )}
                       </div>
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 flex-wrap">
                         <div className="flex">
                           {[...Array(5)].map((_, i) => (
                             <Star
                               key={i}
-                              className={`w-4 h-4 ${
+                              className={`w-3 h-3 sm:w-4 sm:h-4 ${
                                 i < feedback.rating
                                   ? 'fill-accent text-accent'
                                   : 'text-muted-foreground'
@@ -242,12 +242,12 @@ const ViewProductFeedback = () => {
                           ? 'secondary'
                           : 'destructive'
                       }
-                      className="text-xs"
+                      className="text-xs self-start sm:self-auto"
                     >
                       {feedback.sentiment}
                     </Badge>
                   </div>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     {feedback.comment}
                   </p>
                 </Card>

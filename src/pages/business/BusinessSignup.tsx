@@ -58,17 +58,17 @@ const BusinessSignup = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary/5 to-info/5 flex items-center justify-center px-6 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 to-info/5 flex items-center justify-center px-4 sm:px-6 py-8 sm:py-12">
       <div className="w-full max-w-md">
-        <Link to="/" className="inline-flex items-center text-primary mb-8 hover:underline">
+        <Link to="/" className="inline-flex items-center text-primary mb-6 sm:mb-8 hover:underline">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Home
         </Link>
         
-        <Card className="p-8 border-l-4 border-l-accent">
-          <div className="text-center mb-8">
-            <h1 className="text-3xl font-bold text-foreground mb-2">Join as Business</h1>
-            <p className="text-muted-foreground">Get valuable insights from real customers</p>
+        <Card className="p-6 sm:p-8 border-l-4 border-l-accent">
+          <div className="text-center mb-6 sm:mb-8">
+            <h1 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">Join as Business</h1>
+            <p className="text-sm sm:text-base text-muted-foreground">Get valuable insights from real customers</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">

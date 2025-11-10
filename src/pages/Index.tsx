@@ -50,27 +50,28 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Navigation */}
       <nav className="bg-card border-b border-border">
-        <div className="container mx-auto px-6 py-4">
+        <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-primary">Try N Sell</div>
-            <div className="flex gap-4 items-center">
+            <div className="text-xl sm:text-2xl font-bold text-primary">Try N Sell</div>
+            <div className="flex gap-2 sm:gap-4 items-center">
               {user && userRole ? (
                 <>
                   <Link to={`/${userRole}/dashboard`}>
-                    <Button variant="ghost">Go to Dashboard</Button>
+                    <Button variant="ghost" size="sm" className="hidden sm:flex">Go to Dashboard</Button>
+                    <Button variant="ghost" size="sm" className="sm:hidden">Dashboard</Button>
                   </Link>
-                  <Button variant="ghost" onClick={signOut}>
-                    <LogOut className="w-4 h-4 mr-2" />
-                    Logout
+                  <Button variant="ghost" size="sm" onClick={signOut}>
+                    <LogOut className="w-4 h-4 sm:mr-2" />
+                    <span className="hidden sm:inline">Logout</span>
                   </Button>
                 </>
               ) : (
                 <>
                   <Link to="/customer-login">
-                    <Button variant="ghost">Customer Login</Button>
+                    <Button variant="ghost" size="sm" className="text-xs sm:text-sm">Customer</Button>
                   </Link>
                   <Link to="/business-login">
-                    <Button variant="ghost">Business Login</Button>
+                    <Button variant="ghost" size="sm" className="text-xs sm:text-sm">Business</Button>
                   </Link>
                 </>
               )}
@@ -80,16 +81,16 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="bg-gradient-brand text-white py-20 px-6">
+      <section className="bg-gradient-brand text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
         <div className="container mx-auto text-center max-w-4xl">
-          <h1 className="text-5xl font-bold mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Where Real Opinions Meet Real Rewards
           </h1>
-          <p className="text-xl mb-8 text-white/90">
+          <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 text-white/90">
             Connect businesses with customers for authentic product feedback.
             Try products, earn rewards, and help brands improve.
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/customer-signup">
               <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90">
                 Join as Customer <ArrowRight className="ml-2 w-5 h-5" />
@@ -105,9 +106,9 @@ const Index = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 px-6 bg-background">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-background">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
             <Card className="p-8 border-l-4 border-l-primary">
               <div className="flex items-center gap-3 mb-4">
                 <Target className="w-8 h-8 text-primary" />
@@ -135,13 +136,13 @@ const Index = () => {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 px-6 bg-muted/30">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">How It Works</h2>
-            <p className="text-muted-foreground">Simple steps to start earning or gaining insights</p>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">How It Works</h2>
+            <p className="text-sm sm:text-base text-muted-foreground">Simple steps to start earning or gaining insights</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
@@ -159,13 +160,13 @@ const Index = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 px-6 bg-background">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-background">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">What Our Community Says</h2>
-            <p className="text-muted-foreground">Real feedback from real users</p>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">What Our Community Says</h2>
+            <p className="text-sm sm:text-base text-muted-foreground">Real feedback from real users</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="p-6">
                 <div className="flex gap-1 mb-4">
@@ -185,9 +186,9 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-card border-t border-border py-12 px-6">
+      <footer className="bg-card border-t border-border py-8 sm:py-12 px-4 sm:px-6">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             <div>
               <h3 className="font-bold text-lg mb-4 text-primary">Try N Sell</h3>
               <p className="text-sm text-muted-foreground">
