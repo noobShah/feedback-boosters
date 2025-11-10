@@ -45,12 +45,12 @@ const AddProduct = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="price">Price ($)</Label>
+              <Label htmlFor="price">Price (₹)</Label>
               <Input
                 id="price"
                 type="number"
-                placeholder="0.00"
-                step="0.01"
+                placeholder="0"
+                step="1"
               />
             </div>
 

@@ -48,7 +48,7 @@ const CustomerProfile = () => {
             <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-3">
               <DollarSign className="w-6 h-6 text-success" />
             </div>
-            <p className="text-2xl font-bold mb-1">$120</p>
+            <p className="text-2xl font-bold mb-1">₹10,200</p>
             <p className="text-sm text-muted-foreground">Total Earned</p>
           </Card>
           <Card className="p-6 text-center">

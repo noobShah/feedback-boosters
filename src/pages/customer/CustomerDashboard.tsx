@@ -28,9 +28,9 @@ const CustomerDashboard = () => {
           />
           <StatCard
             title="Total Earnings"
-            value="$120"
+            value="₹10,200"
             icon={DollarSign}
-            trend="+$15 this month"
+            trend="+₹1,275 this month"
             accentColor="success"
           />
           <StatCard
@@ -52,7 +52,7 @@ const CustomerDashboard = () => {
                   <p className="font-medium">Review Approved</p>
                   <p className="text-sm text-muted-foreground">Wireless Headphones Pro</p>
                 </div>
-                <span className="text-sm text-success font-medium">+$5.00</span>
+                <span className="text-sm text-success font-medium">+₹425</span>
               </div>
               <div className="flex items-center gap-4 p-3 bg-muted/30 rounded-lg">
                 <div className="w-2 h-2 bg-warning rounded-full"></div>
@@ -68,7 +68,7 @@ const CustomerDashboard = () => {
                   <p className="font-medium">Review Approved</p>
                   <p className="text-sm text-muted-foreground">Organic Skincare Set</p>
                 </div>
-                <span className="text-sm text-success font-medium">+$5.00</span>
+                <span className="text-sm text-success font-medium">+₹425</span>
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@ const CustomerDashboard = () => {
               <div className="flex flex-col items-center p-4 bg-success/10 rounded-lg">
                 <div className="text-3xl mb-2">💰</div>
                 <p className="font-medium text-center">Earner</p>
-                <p className="text-xs text-muted-foreground text-center">$100+ earned</p>
+                <p className="text-xs text-muted-foreground text-center">₹8,500+ earned</p>
               </div>
               <div className="flex flex-col items-center p-4 bg-info/10 rounded-lg">
                 <div className="text-3xl mb-2">🚀</div>

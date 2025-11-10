@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { ArrowRight, Users, TrendingUp, Award, MessageSquare, Star, Target } from 'lucide-react';
+import { ArrowRight, Users, TrendingUp, Award, MessageSquare, Star, Target, LogOut } from 'lucide-react';
+import { useAuth } from '@/hooks/useAuth';
 
 const Index = () => {
+  const { user, userRole, signOut } = useAuth();
+  
   const features = [
     {
       icon: MessageSquare,
@@ -50,13 +53,27 @@ const Index = () => {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="text-2xl font-bold text-primary">Try N Sell</div>
-            <div className="flex gap-4">
-              <Link to="/customer-login">
-                <Button variant="ghost">Customer Login</Button>
-              </Link>
-              <Link to="/business-login">
-                <Button variant="ghost">Business Login</Button>
-              </Link>
+            <div className="flex gap-4 items-center">
+              {user && userRole ? (
+                <>
+                  <Link to={`/${userRole}/dashboard`}>
+                    <Button variant="ghost">Go to Dashboard</Button>
+                  </Link>
+                  <Button variant="ghost" onClick={signOut}>
+                    <LogOut className="w-4 h-4 mr-2" />
+                    Logout
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Link to="/customer-login">
+                    <Button variant="ghost">Customer Login</Button>
+                  </Link>
+                  <Link to="/business-login">
+                    <Button variant="ghost">Business Login</Button>
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>

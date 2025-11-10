@@ -100,7 +100,7 @@ const SubmitFeedback = () => {
             <li>• Be specific about features you liked or disliked</li>
             <li>• Include photos showing the product in use</li>
             <li>• Mention how it compares to similar products</li>
-            <li>• Quality reviews earn up to $10 in rewards!</li>
+            <li>• Quality reviews earn up to ₹850 in rewards!</li>
           </ul>
         </Card>
       </div>

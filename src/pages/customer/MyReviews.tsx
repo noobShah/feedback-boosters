@@ -61,7 +61,7 @@ const MyReviews = () => {
                   <p className={`text-2xl font-bold ${
                     review.earnings > 0 ? 'text-success' : 'text-muted-foreground'
                   }`}>
-                    ${review.earnings.toFixed(2)}
+                    ₹{review.earnings.toLocaleString('en-IN')}
                   </p>
                 </div>
               </div>

@@ -35,7 +35,7 @@ const BrowseProducts = () => {
                 <p className="text-sm text-muted-foreground mb-4">{product.description}</p>
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-2xl font-bold text-primary">${product.price}</p>
+                    <p className="text-2xl font-bold text-primary">₹{product.price.toLocaleString('en-IN')}</p>
                     <p className="text-xs text-muted-foreground flex items-center gap-1">
                       <MessageSquare className="w-3 h-3" />
                       {product.feedbackCount} reviews
