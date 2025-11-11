@@ -27,10 +27,9 @@ const About = () => {
   ];
 
   const team = [
-    { name: "Sarah Johnson", role: "CEO & Founder", initials: "SJ" },
-    { name: "Michael Chen", role: "CTO", initials: "MC" },
-    { name: "Emma Williams", role: "Head of Product", initials: "EW" },
-    { name: "David Brown", role: "Head of Business", initials: "DB" }
+    { name: "Maharshi Pandya", initials: "MP" },
+    { name: "Rudra Patel", initials: "RP" },
+    { name: "Het Gurjar", initials: "HG" }
   ];
 
   return (
@@ -231,14 +230,13 @@ const About = () => {
           <p className="text-lg text-muted-foreground">The passionate people behind Try N Sell</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {team.map((member, index) => (
             <Card key={index} className="p-6 text-center hover:shadow-xl transition-all duration-300 hover:scale-105">
               <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl font-bold shadow-lg">
                 {member.initials}
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-2">{member.name}</h3>
-              <p className="text-muted-foreground">{member.role}</p>
+              <h3 className="text-xl font-bold text-foreground">{member.name}</h3>
             </Card>
           ))}
         </div>
