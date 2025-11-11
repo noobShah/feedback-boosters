@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Target, Users, TrendingUp, Award, Heart, Zap } from 'lucide-react';
+import { ArrowLeft, Target, Users, TrendingUp, Award, Heart, Zap, DollarSign } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 const About = () => {
@@ -76,6 +76,123 @@ const About = () => {
               </div>
             </div>
           </Card>
+        </div>
+      </div>
+
+      {/* Revenue Model Section */}
+      <div className="container mx-auto px-6 py-16">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-accent to-warning text-white px-6 py-2 rounded-full mb-6 shadow-lg">
+              <DollarSign className="w-5 h-5" />
+              <span className="font-semibold">Transparency</span>
+            </div>
+            <h2 className="text-4xl font-bold text-foreground mb-4">Our Revenue Model</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              We believe in complete transparency. Here's how we sustain and grow our platform.
+            </p>
+          </div>
+
+          <Card className="overflow-hidden shadow-xl border-2 border-primary/20">
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="bg-gradient-to-r from-primary to-info text-white">
+                    <th className="px-6 py-4 text-left text-lg font-bold">Revenue Source</th>
+                    <th className="px-6 py-4 text-right text-lg font-bold">Estimated Share</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border">
+                  <tr className="hover:bg-accent/5 transition-colors">
+                    <td className="px-6 py-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-info/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-primary font-bold">1</span>
+                        </div>
+                        <div>
+                          <div className="font-semibold text-foreground">Business Subscription Plans</div>
+                          <div className="text-sm text-muted-foreground">Premium features for businesses to access advanced analytics</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 text-right">
+                      <span className="inline-flex items-center bg-primary/10 text-primary font-bold px-4 py-2 rounded-lg text-xl">35%</span>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-accent/5 transition-colors">
+                    <td className="px-6 py-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent/20 to-warning/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-accent font-bold">2</span>
+                        </div>
+                        <div>
+                          <div className="font-semibold text-foreground">Pay per Feedback Model</div>
+                          <div className="text-sm text-muted-foreground">Businesses pay for each verified customer review</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 text-right">
+                      <span className="inline-flex items-center bg-accent/10 text-accent font-bold px-4 py-2 rounded-lg text-xl">25%</span>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-accent/5 transition-colors">
+                    <td className="px-6 py-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-info/20 to-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-info font-bold">3</span>
+                        </div>
+                        <div>
+                          <div className="font-semibold text-foreground">Data Analytics & Insights Reports</div>
+                          <div className="text-sm text-muted-foreground">Premium reports and market intelligence services</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 text-right">
+                      <span className="inline-flex items-center bg-info/10 text-info font-bold px-4 py-2 rounded-lg text-xl">20%</span>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-accent/5 transition-colors">
+                    <td className="px-6 py-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-warning/20 to-accent/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-warning font-bold">4</span>
+                        </div>
+                        <div>
+                          <div className="font-semibold text-foreground">Sponsored Listings & Advertisements</div>
+                          <div className="text-sm text-muted-foreground">Featured product placements and promotional opportunities</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 text-right">
+                      <span className="inline-flex items-center bg-warning/10 text-warning font-bold px-4 py-2 rounded-lg text-xl">10%</span>
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-accent/5 transition-colors">
+                    <td className="px-6 py-4">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-primary font-bold">5</span>
+                        </div>
+                        <div>
+                          <div className="font-semibold text-foreground">Premium Reviewer Program</div>
+                          <div className="text-sm text-muted-foreground">Exclusive access fees for top-tier reviewers</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 text-right">
+                      <span className="inline-flex items-center bg-primary/10 text-primary font-bold px-4 py-2 rounded-lg text-xl">10%</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </Card>
+
+          <div className="mt-8 p-6 bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl border border-primary/10">
+            <p className="text-muted-foreground text-center">
+              <span className="font-semibold text-foreground">Our Commitment:</span> All revenue streams are designed to create value for both customers and businesses while maintaining platform sustainability.
+            </p>
+          </div>
         </div>
       </div>
 
